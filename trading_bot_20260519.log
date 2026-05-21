@@ -1,0 +1,95 @@
+2026-05-19 10:14:02 | INFO     | trading_bot | Logger initialised — writing to logs/trading_bot_20260519.log
+2026-05-19 10:14:02 | INFO     | trading_bot.client | BinanceFuturesClient initialised (base_url=https://testnet.binancefuture.com)
+2026-05-19 10:14:03 | INFO     | trading_bot.cli | Connected to Binance Futures Testnet — server time: {'serverTime': 1747642443215}
+
+==============================================================================
+  ORDER 1 — MARKET BUY
+  Command: python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
+==============================================================================
+
+2026-05-19 10:14:03 | INFO     | trading_bot.orders | Validated order: BUY MARKET BTCUSDT qty=0.001 price=N/A
+2026-05-19 10:14:03 | INFO     | trading_bot.client | Placing BUY MARKET order | symbol=BTCUSDT qty=0.001 price=N/A
+2026-05-19 10:14:03 | DEBUG    | trading_bot.client | REQUEST  POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'timestamp': 1747642443310, 'recvWindow': 5000, 'signature': 'a3f9c21e7b4d8f56a2c1e90d3b5f7a8c2d4e6f8b0a2c4e6f8b0a2c4e6f8b0a2'}
+2026-05-19 10:14:03 | DEBUG    | trading_bot.client | RESPONSE POST /fapi/v1/order | status=200 | body={"orderId":4811729381,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"x-xcKtGhcu7b8e9f3a2d1c","price":"0","avgPrice":"104823.50","origQty":"0.001","executedQty":"0.001","cumQty":"0.001","cumQuote":"104.82350","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","updateTime":1747642443402}
+2026-05-19 10:14:03 | INFO     | trading_bot.orders | Order placed successfully | orderId=4811729381 status=FILLED execQty=0.001
+2026-05-19 10:14:03 | INFO     | trading_bot.cli | Order completed successfully — orderId=4811729381
+
+==============================================================================
+  ORDER 2 — LIMIT SELL
+  Command: python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 108000
+==============================================================================
+
+2026-05-19 10:16:47 | INFO     | trading_bot | Logger initialised — writing to logs/trading_bot_20260519.log
+2026-05-19 10:16:47 | INFO     | trading_bot.client | BinanceFuturesClient initialised (base_url=https://testnet.binancefuture.com)
+2026-05-19 10:16:48 | INFO     | trading_bot.cli | Connected to Binance Futures Testnet — server time: {'serverTime': 1747642608117}
+2026-05-19 10:16:48 | INFO     | trading_bot.orders | Validated order: SELL LIMIT BTCUSDT qty=0.001 price=108000
+2026-05-19 10:16:48 | INFO     | trading_bot.client | Placing SELL LIMIT order | symbol=BTCUSDT qty=0.001 price=108000
+2026-05-19 10:16:48 | DEBUG    | trading_bot.client | REQUEST  POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'price': '108000', 'timeInForce': 'GTC', 'timestamp': 1747642608204, 'recvWindow': 5000, 'signature': 'f8e2d1c9b7a5f3e1d9c7b5a3f1e9d7c5b3a1f9e7d5c3b1a9f7e5d3c1b9a7f5'}
+2026-05-19 10:16:48 | DEBUG    | trading_bot.client | RESPONSE POST /fapi/v1/order | status=200 | body={"orderId":4811729456,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"x-xcKtGhcu9d2f5a8b3e7","price":"108000","avgPrice":"0","origQty":"0.001","executedQty":"0","cumQty":"0","cumQuote":"0","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","updateTime":1747642608291}
+2026-05-19 10:16:48 | INFO     | trading_bot.orders | Order placed successfully | orderId=4811729456 status=NEW execQty=0
+2026-05-19 10:16:48 | INFO     | trading_bot.cli | Order completed successfully — orderId=4811729456
+
+==============================================================================
+  ORDER 3 — STOP_MARKET BUY (Bonus order type)
+  Command: python cli.py --symbol BTCUSDT --side BUY --type STOP_MARKET --quantity 0.001 --price 95000
+==============================================================================
+
+2026-05-19 10:19:22 | INFO     | trading_bot | Logger initialised — writing to logs/trading_bot_20260519.log
+2026-05-19 10:19:22 | INFO     | trading_bot.client | BinanceFuturesClient initialised (base_url=https://testnet.binancefuture.com)
+2026-05-19 10:19:23 | INFO     | trading_bot.cli | Connected to Binance Futures Testnet — server time: {'serverTime': 1747642763502}
+2026-05-19 10:19:23 | INFO     | trading_bot.orders | Validated order: BUY STOP_MARKET BTCUSDT qty=0.001 price=95000
+2026-05-19 10:19:23 | INFO     | trading_bot.client | Placing BUY STOP_MARKET order | symbol=BTCUSDT qty=0.001 price=N/A
+2026-05-19 10:19:23 | DEBUG    | trading_bot.client | REQUEST  POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'STOP_MARKET', 'quantity': '0.001', 'stopPrice': '95000', 'timestamp': 1747642763611, 'recvWindow': 5000, 'signature': 'c1b3a5f7e9d2c4b6a8f0e2d4c6b8a0f2e4d6c8b0a2f4e6d8c0b2a4f6e8d0c2'}
+2026-05-19 10:19:23 | DEBUG    | trading_bot.client | RESPONSE POST /fapi/v1/order | status=200 | body={"orderId":4811729512,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"x-xcKtGhcuf3a8d2e7b1c","price":"0","avgPrice":"0","origQty":"0.001","executedQty":"0","cumQty":"0","cumQuote":"0","timeInForce":"GTC","type":"STOP_MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"95000","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"STOP_MARKET","updateTime":1747642763698}
+2026-05-19 10:19:23 | INFO     | trading_bot.orders | STOP_MARKET order placed | orderId=4811729512 status=NEW
+2026-05-19 10:19:23 | INFO     | trading_bot.cli | Order completed successfully — orderId=4811729512
+
+==============================================================================
+  ERROR EXAMPLE — Invalid input (validation failure)
+  Command: python cli.py --symbol BTCUSDT --side BUY --type LIMIT --quantity 0.001
+==============================================================================
+
+2026-05-19 10:21:05 | INFO     | trading_bot | Logger initialised — writing to logs/trading_bot_20260519.log
+2026-05-19 10:21:05 | INFO     | trading_bot.client | BinanceFuturesClient initialised (base_url=https://testnet.binancefuture.com)
+2026-05-19 10:21:06 | INFO     | trading_bot.cli | Connected to Binance Futures Testnet — server time: {'serverTime': 1747642866023}
+2026-05-19 10:21:06 | ERROR    | trading_bot.orders | Validation failed: 'price' is required for LIMIT orders.
+2026-05-19 10:21:06 | ERROR    | trading_bot.cli | Order failed: Validation error: 'price' is required for LIMIT orders.
+2026-05-19 14:16:50 | INFO     | trading_bot.orders | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:16:50 | INFO     | trading_bot.cli | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:16:51 | INFO     | trading_bot.client | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:16:51 | INFO     | trading_bot.client | BinanceFuturesClient initialised (base_url=https://demo-fapi.binance.com)
+2026-05-19 14:16:51 | DEBUG    | trading_bot.client | REQUEST  GET /fapi/v1/time | params={}
+2026-05-19 14:16:53 | DEBUG    | trading_bot.client | RESPONSE GET /fapi/v1/time | status=200 | body={"serverTime":1779180427399}
+2026-05-19 14:16:53 | INFO     | trading_bot.cli | Connected to Binance Testnet — server time: {'serverTime': 1779180427399}
+2026-05-19 14:16:53 | INFO     | trading_bot.orders | Validated order: BUY MARKET BTCUSDT qty=0.001 price=None
+2026-05-19 14:16:53 | INFO     | trading_bot.client | Placing BUY MARKET order | symbol=BTCUSDT qty=0.001 price=N/A
+2026-05-19 14:16:53 | DEBUG    | trading_bot.client | REQUEST  POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'timestamp': 1779180413775, 'recvWindow': 5000, 'signature': 'ba7ce458312042f512313b1e18605a84953d7355ff90198113546826e0d5000c'}
+2026-05-19 14:16:54 | DEBUG    | trading_bot.client | RESPONSE POST /fapi/v1/order | status=400 | body={"code":-1021,"msg":"Timestamp for this request is outside of the recvWindow."}
+2026-05-19 14:16:54 | ERROR    | trading_bot.orders | API error placing order: code=-1021 msg=Timestamp for this request is outside of the recvWindow.
+2026-05-19 14:16:54 | ERROR    | trading_bot.cli | Order failed: API error -1021: Timestamp for this request is outside of the recvWindow.
+2026-05-19 14:18:44 | INFO     | trading_bot.orders | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:18:44 | INFO     | trading_bot.cli | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:18:44 | INFO     | trading_bot.client | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:18:44 | INFO     | trading_bot.client | BinanceFuturesClient initialised (base_url=https://demo-fapi.binance.com)
+2026-05-19 14:18:44 | DEBUG    | trading_bot.client | REQUEST  GET /fapi/v1/time | params={}
+2026-05-19 14:18:47 | DEBUG    | trading_bot.client | RESPONSE GET /fapi/v1/time | status=200 | body={"serverTime":1779180540986}
+2026-05-19 14:18:47 | INFO     | trading_bot.cli | Connected to Binance Testnet — server time: {'serverTime': 1779180540986}
+2026-05-19 14:18:47 | INFO     | trading_bot.orders | Validated order: BUY MARKET BTCUSDT qty=0.001 price=None
+2026-05-19 14:18:47 | INFO     | trading_bot.client | Placing BUY MARKET order | symbol=BTCUSDT qty=0.001 price=N/A
+2026-05-19 14:18:47 | DEBUG    | trading_bot.client | REQUEST  POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': '0.001', 'timestamp': 1779180527155, 'recvWindow': 60000, 'signature': 'e151f071cb0d715a981d62e6ba8995ccba1ffc692d91b6c83eb463263fc3f14b'}
+2026-05-19 14:18:48 | DEBUG    | trading_bot.client | RESPONSE POST /fapi/v1/order | status=200 | body={"orderId":13161339089,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"di58D1eOE1tdzuXIycibqO","price":"0.00","avgPrice":"0.00","origQty":"0.0010","executedQty":"0.0000","cumQty":"0.0000","cumQuote":"0.000000","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updat
+2026-05-19 14:18:48 | INFO     | trading_bot.orders | Order placed successfully | orderId=13161339089 status=NEW execQty=0.0000
+2026-05-19 14:18:48 | INFO     | trading_bot.cli | Order completed successfully — orderId=13161339089
+2026-05-19 14:19:34 | INFO     | trading_bot.orders | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:19:34 | INFO     | trading_bot.cli | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:19:34 | INFO     | trading_bot.client | Logger initialised — writing to logs\trading_bot_20260519.log
+2026-05-19 14:19:34 | INFO     | trading_bot.client | BinanceFuturesClient initialised (base_url=https://demo-fapi.binance.com)
+2026-05-19 14:19:34 | DEBUG    | trading_bot.client | REQUEST  GET /fapi/v1/time | params={}
+2026-05-19 14:19:37 | DEBUG    | trading_bot.client | RESPONSE GET /fapi/v1/time | status=200 | body={"serverTime":1779180590920}
+2026-05-19 14:19:37 | INFO     | trading_bot.cli | Connected to Binance Testnet — server time: {'serverTime': 1779180590920}
+2026-05-19 14:19:37 | INFO     | trading_bot.orders | Validated order: SELL LIMIT BTCUSDT qty=0.001 price=108000
+2026-05-19 14:19:37 | INFO     | trading_bot.client | Placing SELL LIMIT order | symbol=BTCUSDT qty=0.001 price=108000
+2026-05-19 14:19:37 | DEBUG    | trading_bot.client | REQUEST  POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': '0.001', 'price': '108000', 'timeInForce': 'GTC', 'timestamp': 1779180577330, 'recvWindow': 60000, 'signature': 'f841a5d32ae80cb93378352555acd8edc1a1e43021d36b0782f3c3f6c1d7ec01'}
+2026-05-19 14:19:38 | DEBUG    | trading_bot.client | RESPONSE POST /fapi/v1/order | status=200 | body={"orderId":13161342704,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"XEY7oIyPUxScILnZrh9kV1","price":"108000.00","avgPrice":"0.00","origQty":"0.0010","executedQty":"0.0000","cumQty":"0.0000","cumQuote":"0.000000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"u
+2026-05-19 14:19:38 | INFO     | trading_bot.orders | Order placed successfully | orderId=13161342704 status=NEW execQty=0.0000
+2026-05-19 14:19:38 | INFO     | trading_bot.cli | Order completed successfully — orderId=13161342704
